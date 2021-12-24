@@ -40,7 +40,7 @@ async def on_message(message):
 		await asyncio.sleep(2)
 		await message.channel.send(joke[1])
 	
-	if 'merry christmas' in message.content.lower():
+	if 'merry christmas' in message.content.lower() or 'happy holidays' in message.content.lower():
 		greeter = f"<@{message.author.id}>"
 		saved_greetings = [
 		f"Merry Christmas, {greeter}! Best wishes for a joyous Christmas filled with love, happiness and prosperity.",
