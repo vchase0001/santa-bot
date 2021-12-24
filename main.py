@@ -2,8 +2,11 @@ import discord
 import random
 import os
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv()
+
+
 
 
 
@@ -64,5 +67,22 @@ async def on_message(message):
 		]
 		await message.reply(random.choice(saved_greetings))
 
+		
+@client.event
+async def on_voice_state_update(member, before, after):
+	if before.channel is None and after.channel is not None:
+		if member == client.user:
+			return
+		else:
+			chance = random.randint(1,5)
+			if chance == 3:
+				#print(after.channel.members)
+				#print(member.voice)
+				choices = ['hohoho.mp3', 'hohoho2.mp3']
+				player = await member.voice.channel.connect()
+				player.play(discord.FFmpegPCMAudio(random.choice(choices)))
+				while player.is_playing():
+					await asyncio.sleep(1)
+				await player.disconnect()
 
 client.run(os.getenv('TOKEN'))
