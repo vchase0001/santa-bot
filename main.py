@@ -18,7 +18,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-	await client.change_presence(status=discord.Status.invisible)  # , activity=discord.Activity(type=discord.ActivityType.listening, name=" Christmas songs"))
+	await client.change_presence(status=discord.Status.dnd activity=discord.Activity(type=discord.ActivityType.watching, name=" out for Christmas cookies."))
 	print('We have logged in as {0.user}'.format(client))
 	#text_channel = client.get_channel(835119138338242622)
 	#await client.get_channel(837231785778610226).send(f"@everyone, it's Go Skateboarding Day today (June 21).\nLet\'s skate together - post a short video in the {text_channel.mention} chat!", file=discord.File('skate.mp4'))
