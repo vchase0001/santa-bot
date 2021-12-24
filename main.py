@@ -52,7 +52,7 @@ async def on_message(message):
 		f"Wishing you a white Christmas, {greeter}! (And when you run out of white, just open a bottle of red).",
 		f"A Christmas reminder, {greeter}: Don’t try to borrow any money from elves... they're always a little short! Have a Merry Christmas!",
 		f"Merry Christmas {greeter}! Wishing you hope, peace and lots of Christmas cookies this holiday season!",
-		f"They say the best Christmas gifts come from the heart … but cash and gift cards do wonders too! Happy Holidays, {greeter}!",
+		f"They say the best Christmas gifts come from the heart… but cash and gift cards do wonders too! Happy Holidays, {greeter}!",
 		f"Remember, Santa is watching. Everything. Yes, even that. Anyway, Merry Christmas, {greeter}!",
 		f"Merry Christmas, {greeter}! May your happiness be large and your bills be small.",
 		f"Merry Christmas {greeter}! This holiday season, let’s make it a point to cherish what’s truly important in our lives: cookies.",
