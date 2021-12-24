@@ -13,8 +13,8 @@ def christmas_greeting(greeter):
 	greeting = random.choice(christmas_greeting)
 	return
 
-intents = discord.Intents().all()
-client = discord.Client(intents=intents)
+#intents = discord.Intents().all()
+client = discord.Client()
 
 @client.event
 async def on_ready():
