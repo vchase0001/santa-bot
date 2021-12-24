@@ -3,18 +3,18 @@ import random
 import os
 from dotenv import load_dotenv
 import asyncio
+import requests
+import json
 
 load_dotenv()
 
 
+def christmas_joke():
+	r = requests.get('https://v2.jokeapi.dev/joke/Christmas')
+	data = json.loads(r.text)
+	return [data['setup'], data['delivery']]
 
 
-
-
-def christmas_greeting(greeter):
-
-	greeting = random.choice(christmas_greeting)
-	return
 
 #intents = discord.Intents().all()
 client = discord.Client()
@@ -34,7 +34,12 @@ async def on_message(message):
 		return
 	#################################
 	
-
+	if message.content.lower().startswith('tell me a joke, santa'):
+		joke = christmas_joke()
+		await message.reply(joke[0])
+		await asyncio.sleep(2)
+		await message.channel.send(joke[1])
+	
 	if 'merry christmas' in message.content.lower():
 		greeter = f"<@{message.author.id}>"
 		saved_greetings = [
