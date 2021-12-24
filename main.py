@@ -74,7 +74,7 @@ async def on_voice_state_update(member, before, after):
 		if member == client.user:
 			return
 		else:
-			chance = random.randint(1,5)
+			chance = random.randint(1,3)
 			if chance == 3:
 				#print(after.channel.members)
 				#print(member.voice)
